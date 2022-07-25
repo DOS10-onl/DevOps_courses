@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # detects how many files were created in the directory
-countfiles=$(find /home/$USER/lesson13 -type f| wc -l )
+countfiles=$(find /home/"$USER"/lesson13 -type f| wc -l )
 echo "count files: $countfiles"
 
 # find need files
-files=$(find /home/$USER/lesson13 -type f \( ! -iname "*.sh" \))
+files=$(find /home/"$USER"/lesson13 -type f \( ! -iname "*.sh" \))
 # replaces all permissions set to 777 with 664
 for file in $files
 do
@@ -16,10 +16,10 @@ do
 done
 
 # detects empty files and removes them
-find /home/$USER/lesson13 -type f \( ! -iname "*.sh" \) -size 0 -print -delete
+find /home/"$USER"/lesson13 -type f \( ! -iname "*.sh" \) -size 0 -print -delete
 
 # find need files
-rmtext=$(find /home/$USER/lesson13 -type f \( ! -iname "*.sh" \))
+rmtext=$(find /home/"$USER"/lesson13 -type f \( ! -iname "*.sh" \))
 # removes all lines except the first one
 for file in $rmtext
 do
