@@ -4,7 +4,7 @@ mkdir /home/"$USER"/lesson13
 touch /home/"$USER"/lesson13/two.txt
 
 echo "Hello string" > /home/"$USER"/lesson13/two.txt
-echo `date` >> /home/"$USER"/lesson13/two.txt
+date >> /home/"$USER"/lesson13/two.txt
 # empty file with 777 permissions set
 touch /home/"$USER"/lesson13/777.txt
 # echo "777" > /home/"$USER"/lesson13/777.txt

@@ -9,9 +9,9 @@ files=$(find /home/"$USER"/lesson13 -type f \( ! -iname "*.sh" \))
 # replaces all permissions set to 777 with 664
 for file in $files
 do
-	if [ $(stat -c "%a" "$file") -eq "777" ]
+	if [ "$(stat -c "%a" "$file")" -eq "777" ]
 	then
-		chmod 664 $file
+		chmod 664 "$file"
 	fi
 done
 
@@ -23,6 +23,5 @@ rmtext=$(find /home/"$USER"/lesson13 -type f \( ! -iname "*.sh" \))
 # removes all lines except the first one
 for file in $rmtext
 do
-	sed -n -i '1p' $file
+	sed -n -i '1p' "$file"
 done
-
