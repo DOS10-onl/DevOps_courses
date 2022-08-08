@@ -23,9 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Skip Shellcheck error SC1071
-      run: |
-        # shellcheck disable=1071
+#     - name: Skip Shellcheck error SC1071
+#       run: |
+#         # shellcheck disable=1071
     - name: Run ShellCheck
       uses: ludeeus/action-shellcheck@master
     
