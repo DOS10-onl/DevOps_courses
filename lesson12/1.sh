@@ -14,19 +14,21 @@ apt install -y rsync
 # config rsync
 touch /etc/rsyncd.conf
 echo " Configuring RSYNC conf "
-echo "hosts allow = 192.168.100.96" > /etc/rsyncd.conf
-echo "hosts deny = *" >> /etc/rsyncd.conf
-echo "list = true" >> /etc/rsyncd.conf
-echo "uid = root" >> /etc/rsyncd.conf
-echo "gid = root" >> /etc/rsyncd.conf
-echo "read only = false" >> /etc/rsyncd.conf
+{
+echo "hosts allow = 192.168.100.96" 
+echo "hosts deny = *" 
+echo "list = true" 
+echo "uid = root" 
+echo "gid = root" 
+echo "read only = false" 
+} > /etc/rsyncd.conf
 cp /lib/systemd/system/rsync.service /etc/systemd/system/rsync.service
 systemctl restart rsync
 
 
 # Fill it with some files and folders (small and big)
 mkdir /home/vagrant/rsync
-      cd rsync
+      cd rsync || exit
       fallocate -l 1M file.out
       fallocate -l 10M mile.out
       fallocate -l 10M rile.out
@@ -40,5 +42,3 @@ mkdir /home/vagrant/rsync
       mkdir dir1
       mkdir photo
       mkdir pwd
-
-
