@@ -13,8 +13,8 @@ echo `date` >> ~/lesson12/lesson12.txt
 var1="String text"
 
 var2="$(ls)"
-
+# shellcheck disable=SC2004
 var3=$((1 + $RANDOM % 20))
 
 # Echo variables' values (one per line) using ONE ECHO command
-echo $var1$'\n'$var2$'\n'$var3 >> ~/lesson12/lesson12.txt
+echo "$var1"$'\n'"$var2"$'\n'$var3 >> ~/lesson12/lesson12.txt
